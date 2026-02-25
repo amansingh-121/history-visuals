@@ -1,0 +1,231 @@
+/* Custom styles for the History Detail View based on user screenshot */
+
+.history-view-container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 2rem 4rem;
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+.history-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    gap: 2rem;
+}
+
+.history-main-title {
+    font-size: 3.5rem;
+    font-weight: 500;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: -0.02em;
+    color: white;
+}
+
+.history-search-wrapper {
+    flex: 1;
+    max-width: 600px;
+}
+
+.history-search-wrapper .search-bar {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    padding: 0.7rem 1.5rem;
+    color: white;
+    outline: none;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.history-search-wrapper .search-bar input {
+    background: transparent;
+    border: none;
+    color: white;
+    width: 90%;
+    outline: none;
+}
+
+.history-layout-grid {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+/* Left Column Styling */
+.history-left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.history-main-media-card {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.history-media-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.history-play-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+}
+
+.history-play-overlay:hover {
+    transform: scale(1.1);
+}
+
+.history-play-overlay span {
+    color: black;
+    font-size: 1.4rem;
+    margin-left: 2px;
+}
+
+.history-index-card {
+    background: rgba(74, 108, 128, 0.5);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.history-index-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.history-index-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.history-index-list li {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 0.5rem 0.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.history-index-list li:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Right Content Box Styling */
+.history-content-well {
+    background: white;
+    border-radius: 24px;
+    min-height: 600px;
+    color: #1a1a1a;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.history-toolbar-container {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.history-toolbar {
+    background: #f9f9f9;
+    border: 1.5px solid #eaeaea;
+    border-radius: 12px;
+    padding: 0.5rem 1.5rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.toolbar-item {
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+    display: flex;
+    align-items: center;
+}
+
+.toolbar-item:hover {
+    opacity: 1;
+}
+
+.toolbar-item svg {
+    width: 20px;
+    height: 20px;
+}
+
+.history-article-body {
+    padding: 2.5rem 3rem;
+}
+
+.history-article-body h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: #000;
+}
+
+.history-article-body p {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.history-highlight {
+    color: #2e7d32;
+    font-weight: 500;
+}
+
+.history-back-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.history-back-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+}

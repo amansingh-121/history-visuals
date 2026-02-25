@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category Details - Indiascope</title>
+    <link rel="stylesheet" href="category.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700&family=Yatra+One&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="top-nav">
+        <div class="nav-links">
+            <a href="index.html">Food</a>
+            <a href="index.html">Culture</a>
+            <a href="index.html" class="active">History</a>
+            <a href="index.html">States</a>
+        </div>
+        <div class="nav-icons">
+            <button class="nav-icon"><img src="https://img.icons8.com/ios-filled/50/ffffff/text.png"
+                    alt="Font"></button>
+            <button class="nav-icon"><img src="https://img.icons8.com/ios-filled/50/ffffff/compare.png"
+                    alt="Compare"></button>
+            <button class="nav-icon"><img src="https://img.icons8.com/ios-filled/50/ffffff/map.png" alt="Map"></button>
+        </div>
+    </header>
+
+    <main class="page-container">
+        <h1 id="category-title">History</h1>
+
+        <div class="breadcrumb-search">
+            <div class="breadcrumb">Home > <span id="current-category">History</span></div>
+            <div class="search-container">
+                <input type="text" placeholder="Search your Topic">
+                <button class="search-btn"><img src="https://img.icons8.com/ios/50/999999/search--v1.png"
+                        alt="Search"></button>
+            </div>
+        </div>
+
+        <div class="main-layout">
+            <!-- Left Sidebar -->
+            <aside class="left-sidebar">
+                <div class="card summary-card">
+                    <div class="card-header blue-header">
+                        Summary of India
+                        <span class="header-icon">↗</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>Places to visit in India</h3>
+                        <p class="subtitle">Name of the place</p>
+                        <ul id="visit-list">
+                            <li>Name of the place</li>
+                            <li>Name of the place</li>
+                            <li>Name of the place</li>
+                            <li>Name of the place</li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Center Media -->
+            <section class="center-content">
+                <div class="media-box" id="main-media">
+                    <div class="play-overlay">
+                        <button class="play-btn">▶</button>
+                    </div>
+                    <div class="expand-icon">⤢</div>
+                </div>
+            </section>
+
+            <!-- Right Sidebar -->
+            <aside class="right-sidebar">
+                <div class="card section-card">
+                    <div class="card-header blue-header">
+                        Section
+                    </div>
+                    <div class="card-body">
+                        <ul id="section-list">
+                            <li><span class="bullet">▷</span> Culture</li>
+                            <li><span class="bullet">▷</span> Indian Food</li>
+                            <li><span class="bullet">▷</span> Name of the Section</li>
+                            <li><span class="bullet">▷</span> Name of the Section</li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <script src="category.js"></script>
+</body>
+
+</html>

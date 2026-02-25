@@ -1,0 +1,289 @@
+:root {
+    --bg-dark: #1e1e1e;
+    --text-main: #ffffff;
+    --text-muted: #b0b0b0;
+    --accent-blue: #607d8b;
+    /* Blue-grey for headers */
+    --accent-blue-light: #78909c;
+    --card-bg: #f8f9fa;
+    --nav-height: 80px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f0f0;
+    background-image: url('PHOTOS/heritage.jpg');
+    /* Background pattern or blurred image */
+    background-size: cover;
+    background-attachment: fixed;
+    color: #333;
+    min-height: 100vh;
+}
+
+/* Background Overlay for blur effect */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    /* Light overlay */
+    backdrop-filter: blur(15px);
+    z-index: -1;
+}
+
+/* Header */
+.top-nav {
+    height: var(--nav-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #888;
+    margin: 0 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+    color: #333;
+    font-weight: 700;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-icon {
+    background: #607d8b;
+    /* Match screenshot blue-grey icons */
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-icon img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Main Container */
+.page-container {
+    padding: 2rem 4rem;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+h1#category-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 5rem;
+    color: #607d8b;
+    opacity: 0.6;
+    margin-bottom: 1rem;
+}
+
+.breadcrumb-search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.breadcrumb {
+    color: #607d8b;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.search-container {
+    position: relative;
+    width: 400px;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 0.8rem 1.5rem;
+    padding-right: 3rem;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    background: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+}
+
+.search-btn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.search-btn img {
+    width: 20px;
+}
+
+/* Layout */
+.main-layout {
+    display: grid;
+    grid-template-columns: 250px 1fr 300px;
+    gap: 2rem;
+    align-items: start;
+}
+
+/* General Card Styling */
+.card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.card-header {
+    padding: 1rem 1.5rem;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.blue-header {
+    background-color: #607d8b;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-body h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.card-body .subtitle {
+    font-size: 0.85rem;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.card-body ul {
+    list-style: none;
+}
+
+.card-body ul li {
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+#section-list li .bullet {
+    margin-right: 10px;
+    color: #607d8b;
+}
+
+/* Summary Card specific override */
+.summary-card {
+    border-radius: 20px;
+}
+
+/* Section Card specific override */
+.section-card {
+    color: #333;
+}
+
+.section-card .card-body {
+    background-color: #607d8b;
+    /* Blue background for the section list as in SS */
+    color: white;
+}
+
+.section-card .card-body ul li {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.section-card .card-header {
+    background-color: white;
+    color: #607d8b;
+    border-bottom: 1px solid #eee;
+}
+
+/* Center Media Box */
+.center-content {
+    display: flex;
+    justify-content: center;
+}
+
+.media-box {
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-image: url('https://img.freepik.com/premium-photo/indian-warrior-king-portrait-warrior-ai-generated_91497-10905.jpg');
+    /* Replace with actual image later */
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.play-btn {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: white;
+    border: none;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.play-btn:hover {
+    transform: scale(1.1);
+}
+
+.expand-icon {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}

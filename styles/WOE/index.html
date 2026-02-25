@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workivers Online Expo - Digital Marketing Agency</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-bolt"></i>
+                Workivers Online Expo
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#home" class="active">Home</a></li>
+                <li class="dropdown">
+                    <a href="#services" class="dropdown-toggle">
+                        Services <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" onclick="loadServicePage('seo')">SEO Optimization</a></li>
+                        <li><a href="#" onclick="loadServicePage('ppc')">PPC Advertising</a></li>
+                        <li><a href="#" onclick="loadServicePage('web')">Web Development</a></li>
+                        <li><a href="#" onclick="loadServicePage('content')">Content Marketing</a></li>
+                        <li><a href="#" onclick="loadServicePage('social')">Social Media Marketing</a></li>
+                        <li><a href="#" onclick="loadServicePage('leads')">Lead Generation</a></li>
+                    </ul>
+                </li>
+                <li><a href="#our-approach">Our Approach</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="get-started-btn">
+                <i class="fas fa-rocket"></i>
+                Get Started
+            </a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Service Modal -->
+    <div id="serviceModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="serviceContent">
+                <!-- Service content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Why Choose Us Modal -->
+    <div id="whyChooseModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeWhyChooseModal()">&times;</span>
+            <div id="whyChooseContent">
+                <div class="service-page">
+                    <h2>Why Choose Workivers Online Expo</h2>
+                    <p>At Workivers Online Expo, we don't just offer digital marketing services – we deliver transformative experiences that propel your business to new heights. Our comprehensive approach combines cutting-edge technology, creative expertise, and data-driven strategies to unlock your brand's true potential.</p>
+                    
+                    <h3>Our Unique Value Proposition</h3>
+                    <p>We understand that every business is unique, which is why we craft personalized digital strategies that align perfectly with your goals, target audience, and industry dynamics. Our team of seasoned professionals brings together diverse expertise to create cohesive campaigns that drive real results.</p>
+                    
+                    <h3>What Sets Us Apart</h3>
+                    <ul>
+                        <li>Customized Digital Strategies tailored to your specific business needs and market conditions</li>
+                        <li>Personalized Client Experience with dedicated account management and direct communication</li>
+                        <li>Cutting-Edge Technology Solutions utilizing the latest tools and innovative platforms</li>
+                        <li>Advanced Industry Expertise with deep knowledge across multiple sectors and verticals</li>
+                        <li>Clear & Honest Pricing Models with transparent cost structures and no hidden fees</li>
+                        <li>Prioritizing Seamless User Interactions that enhance customer experience and drive conversions</li>
+                    </ul>
+
+                    <div class="service-benefits">
+                        <h4>Our Commitment to Excellence</h4>
+                        <p>We believe in building long-term partnerships with our clients. Our success is measured by your growth, which is why we go above and beyond to ensure every campaign delivers exceptional ROI and sustainable results.</p>
+                        <ul>
+                            <li>24/7 dedicated support and consultation</li>
+                            <li>Regular performance reviews and strategy optimization</li>
+                            <li>Access to exclusive industry insights and market intelligence</li>
+                            <li>Scalable solutions that grow with your business</li>
+                            <li>Comprehensive reporting and transparent communication</li>
+                        </ul>
+                    </div>
+
+                    <h3>Innovation at Our Core</h3>
+                    <p>We stay ahead of industry trends and technological advances to ensure our clients always have a competitive edge. Our team continuously explores new opportunities in digital marketing, from AI-powered analytics to emerging social media platforms.</p>
+                    
+                    <h4>Data-Driven Decision Making</h4>
+                    <p>Every strategy we implement is backed by comprehensive data analysis and market research. We use advanced analytics tools to track performance, identify opportunities, and optimize campaigns in real-time.</p>
+                    
+                    <h4>Creative Excellence</h4>
+                    <p>Our creative team combines artistic vision with strategic thinking to produce compelling content that resonates with your audience and drives engagement across all digital channels.</p>
+
+                    <div class="service-cta">
+                        <h3>Ready to Transform Your Digital Presence?</h3>
+                        <p>Join hundreds of satisfied clients who have experienced the Workivers Online Expo difference. Let's discuss how we can elevate your brand and achieve your business objectives.</p>
+                        <a href="#contact" class="cta-btn" onclick="closeWhyChooseModal(); document.getElementById('contact').scrollIntoView({behavior: 'smooth'});">Start Your Journey</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Icons -->
+    <div class="floating-icons">
+        <div class="floating-icon">
+            <i class="fas fa-star"></i>
+        </div>
+        <div class="floating-icon">
+            <i class="fas fa-chart-line"></i>
+        </div>
+        <div class="floating-icon">
+            <i class="fas fa-bolt"></i>
+        </div>
+        <div class="floating-icon">
+            <i class="fas fa-envelope"></i>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content fade-in">
+                <h1 class="typing-text">
+                    Empowering<br>
+                    Your <span class="highlight">Digital</span><br>
+                    Success
+                </h1>
+                <p>
+                    Transform your business with our comprehensive digital marketing solutions. From SEO to PPC, web development to content strategy - we deliver results that matter.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        Start Your Journey
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image fade-in">
+                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Digital Marketing Team">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="services-container">
+            <h2 class="fade-in">Our <span class="highlight">Services</span></h2>
+            <p class="fade-in">
+                Comprehensive digital marketing solutions designed to accelerate your business growth and maximize your online presence.
+            </p>
+            <div class="services-grid">
+                <div class="service-card fade-in" onclick="loadServicePage('seo')">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="corner-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>SEO Optimization</h3>
+                    <p>Boost your search rankings with our data-driven SEO strategies and technical optimization.</p>
+                    <a href="#" class="learn-more">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card fade-in" onclick="loadServicePage('ppc')">
+                    <div class="service-icon">
+                        <i class="fas fa-mouse-pointer"></i>
+                    </div>
+                    <div class="corner-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>PPC Advertising</h3>
+                    <p>Maximize ROI with targeted ad campaigns across Google, Facebook, and other platforms.</p>
+                    <a href="#" class="learn-more">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card fade-in" onclick="loadServicePage('web')">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="corner-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Create stunning, responsive websites that convert visitors into customers.</p>
+                    <a href="#" class="learn-more">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card fade-in" onclick="loadServicePage('content')">
+                    <div class="service-icon">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <div class="corner-icon">
+                        <i class="fas fa-paper-plane"></i>
+                    </div>
+                    <h3>Content Marketing</h3>
+                    <p>Engage your audience with compelling content that drives traffic and builds authority.</p>
+                    <a href="#" class="learn-more">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card fade-in" onclick="loadServicePage('social')">
+                    <div class="service-icon">
+                        <i class="fab fa-facebook"></i>
+                    </div>
+                    <div class="corner-icon">
+                        <i class="fas fa-thumbs-up"></i>
+                    </div>
+                    <h3>Social Media Marketing</h3>
+                    <p>Build your brand presence and engage audiences across all major social platforms.</p>
+                    <a href="#" class="learn-more">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card fade-in" onclick="loadServicePage('leads')">
+                    <div class="service-icon">
+                        <i class="fas fa-magnet"></i>
+                    </div>
+                    <div class="corner-icon">
+                        <i class="fas fa-funnel-dollar"></i>
+                    </div>
+                    <h3>Lead Generation</h3>
+                    <p>Generate high-quality leads through strategic campaigns and conversion optimization.</p>
+                    <a href="#" class="learn-more">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose" class="why-choose">
+        <div class="why-choose-container">
+            <h2 class="fade-in">Why Choose <span class="highlight">Workivers Online Expo</span></h2>
+            <div class="subtitle fade-in">Unlock Your Brand's Digital Edge and Inspire Engagement</div>
+            <p class="fade-in">
+                Strengthen your brand's influence online: Proven strategies, expert tactics, and compelling messaging empower you to connect with broader audiences and inspire lasting loyalty.
+            </p>
+            <div class="features-grid">
+                <div class="feature-item fade-in highlight-box">
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Customized Digital Strategies</h4>
+                        <p>Tailored approaches that align with your unique business goals and target audience for maximum impact.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item fade-in highlight-box">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Personalized Client Experience</h4>
+                        <p>Dedicated account management with personalized attention to ensure your success at every step.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item fade-in highlight-box">
+                    <div class="feature-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Cutting-Edge Technology Solutions</h4>
+                        <p>Advanced tools and innovative technologies to stay ahead of the competition and drive results.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item fade-in highlight-box">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Advanced Industry Expertise</h4>
+                        <p>Deep knowledge across industries with proven track record of delivering exceptional results.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item fade-in highlight-box">
+                    <div class="feature-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Clear & Honest Pricing Models</h4>
+                        <p>Transparent pricing with no hidden fees, ensuring you get the best value for your investment.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-item fade-in highlight-box">
+                    <div class="feature-icon">
+                        <i class="fas fa-mouse"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4>Prioritizing Seamless User Interactions</h4>
+                        <p>Focus on creating smooth, intuitive experiences that delight users and drive conversions.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="why-choose-buttons fade-in">
+                <a href="#" class="btn-primary" onclick="openWhyChooseModal()">
+                    Learn More
+                </a>
+                <a href="#contact" class="btn-secondary">
+                    Reach Out
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Approach Section -->
+    <section id="our-approach" class="our-approach">
+        <div class="approach-container">
+            <div class="approach-content fade-in">
+                <h2>Our <span class="highlight">Approach</span></h2>
+                <div class="subtitle">Unlock Your Brand's Digital Edge and Inspire Engagement</div>
+                <p>
+                    Strengthen your brand's influence online: Proven strategies, expert tactics, and compelling messaging empower you to connect with broader audiences and inspire lasting loyalty.
+                </p>
+                <div class="approach-features">
+                    <div class="approach-feature">
+                        <i class="fas fa-check"></i>
+                        <span>Customized Digital Strategies</span>
+                    </div>
+                    <div class="approach-feature">
+                        <i class="fas fa-check"></i>
+                        <span>Personalized Client Experience</span>
+                    </div>
+                    <div class="approach-feature">
+                        <i class="fas fa-check"></i>
+                        <span>Cutting-Edge Technology Solutions</span>
+                    </div>
+                    <div class="approach-feature">
+                        <i class="fas fa-check"></i>
+                        <span>Advanced Industry Expertise</span>
+                    </div>
+                    <div class="approach-feature">
+                        <i class="fas fa-check"></i>
+                        <span>Clear & Honest Pricing Models</span>
+                    </div>
+                    <div class="approach-feature">
+                        <i class="fas fa-check"></i>
+                        <span>Prioritizing Seamless User Interactions</span>
+                    </div>
+                </div>
+                <div class="approach-buttons">
+                    <a href="#about" class="btn-primary">
+                        Learn More
+                    </a>
+                    <a href="#contact" class="btn-secondary">
+                        Reach Out
+                    </a>
+                </div>
+            </div>
+            <div class="approach-image fade-in">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Our Approach">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-container">
+            <div class="about-content fade-in">
+                <h2>About <span class="highlight">Our Team</span></h2>
+                <p>
+                    We are accomplished professionals with diverse complementary expertise in digital marketing, bringing years of experience and proven results to every project.
+                </p>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="stat-number">150+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Client Satisfaction</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Support Available</div>
+                    </div>
+                </div>
+                <a href="#" class="meet-team-btn">Meet Our Team</a>
+            </div>
+            <div class="about-image fade-in">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Our Team">
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="portfolio-container">
+            <h2 class="fade-in">Our <span class="highlight">Portfolio</span></h2>
+            <p class="fade-in">
+                Explore our successful projects and see how we've helped businesses achieve their digital marketing goals.
+            </p>
+            <div class="portfolio-grid">
+                <div class="portfolio-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Web Development Project">
+                </div>
+                <div class="portfolio-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Analytics Dashboard">
+                </div>
+                <div class="portfolio-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Mobile App">
+                </div>
+                <div class="portfolio-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Data Analysis">
+                </div>
+                <div class="portfolio-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Marketing Report">
+                </div>
+                <div class="portfolio-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Strategy Planning">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="testimonials-container">
+            <h2 class="fade-in">Client <span class="highlight">Testimonials</span></h2>
+            <p class="fade-in">
+                See what our clients say about working with us and the results we've delivered.
+            </p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Workivers transformed our online presence completely. Our website traffic increased by 400% and we're getting more qualified leads than ever before."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AS</div>
+                        <div class="author-info">
+                            <h4>Aman Singh</h4>
+                            <p>CEO, TechStart Inc.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "The team's expertise in PPC advertising helped us achieve a 300% ROI on our ad spend. Their strategies are data-driven and incredibly effective."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">NA</div>
+                        <div class="author-info">
+                            <h4>Neha Aggarwal</h4>
+                            <p>Marketing Director, GrowFast</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "From web development to content strategy, they delivered everything on time and exceeded our expectations. Highly recommended!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">NA</div>
+                        <div class="author-info">
+                            <h4>Noah Adams</h4>
+                            <p>Founder, EcomPlus</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <div class="contact-info fade-in">
+                <h2>Get In <span class="highlight">Touch</span></h2>
+                <p>
+                    Ready to take your digital marketing to the next level? Contact us today for a free consultation and discover how we can help grow your business.
+                </p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Phone</h4>
+                            <p>+91 7231810836</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <p>workiversonlineexpo@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Office</h4>
+                            <p>Bhiwadi, Rajasthan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form fade-in">
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" placeholder="John" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" placeholder="Doe" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+91 12345 67890" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Interest</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option value="seo">SEO Optimization</option>
+                            <option value="ppc">PPC Advertising</option>
+                            <option value="web">Web Development</option>
+                            <option value="content">Content Marketing</option>
+                            <option value="social">Social Media Marketing</option>
+                            <option value="leads">Lead Generation</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Tell us about your project..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>workivers Online Expo</h3>
+                <p>
+                    Empowering businesses through innovative digital marketing solutions. Your success is our mission.
+                </p>
+                <div class="social-links">
+                    <a href="#" class="social-link">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:+917231810836">+91 7231810836</a></li>
+                    <li><a href="mailto:workiversonlineexpo@gmail.com">workiversonlineexpo@gmail.com</a></li>
+                    <li><a href="#">Bhiwadi, Rajasthan</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Workivers Online Expo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
